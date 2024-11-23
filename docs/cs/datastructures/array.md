@@ -1,25 +1,41 @@
 # Array
 
-## Good to know
+A collection of elements stored at contiguous memory locations.
 
-## Create
+- Fixed size
 
-```
+## Operations
+
+Create
+```java
     int[] arr = new int[5];
 ```
 
-```
+```java
     int[] arr = {1,2,3,4,5};
 ```
 
-```
+```java
     int[] arr = new int[1];
 ```
 
-## Assign
-
-```
+Assign
+```java
     arr[0] = 99;
 ```
 
-## Operations
+Access
+```java
+    arr[0];
+```
+
+Modify Element
+```java
+    arr[0] = 2;
+```
+
+Multi-Dimensional Array
+```java
+    int[][] arr = new int[5][5];
+```
+
