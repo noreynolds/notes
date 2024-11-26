@@ -1,6 +1,6 @@
 # Array
 
-A collection of elements stored at contiguous memory locations.
+A collection of elements stored at a contiguous memory location.
 
 - Fixed size
 
