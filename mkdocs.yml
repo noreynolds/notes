@@ -1,29 +1,35 @@
 site_name: Notes
 repo_url: https://github.com/noreynolds/notes
+site_url: https://noreynolds.github.io/notes/
 
 nav:
-  - Home:
-    - index.md
-  - CS:
-    - Data Structures:
-      - Array: cs/datastructures/array.md
-      - Bag: cs/datastructures/bag.md
-      - Queue: cs/datastructures/queue.md
-      - Stack: cs/datastructures/stack.md
+  - Home: index.md
+  - Computer Science:
+    - cs/index.md
+    - Data Structures: cs/datastructures/index.md
+    - Algorithms: cs/algorithms/index.md
+
 theme: 
   name: material
+  font:
+    code: Roboto Mono
+  icon:
+    logo: material/library
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
+      primary: amber
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
+
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -31,30 +37,38 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
   features:
-    - content.code.copy
     - navigation.path
     - navigation.indexes
     - navigation.tabs
     - navigation.top
+    - navigation.tracking
     - toc.follow
-    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
 
 markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.details
+  - admonition
 
