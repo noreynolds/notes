@@ -1,8 +1,10 @@
 ## Array
+/// define
 
-A collection of elements stored at a contiguous memory location.
+- **A collection of elements stored at a contiguous memory location.**
+- Arrays are of a fixed size. Dynamic arrays (`ArrayList` in Java) create new arrays of an increased length when approaching a pre-determined limit (usually half the size).
 
-Fixed size
+///
 
 ### Operations
 
@@ -35,6 +37,11 @@ Fixed size
     ```
 
 ## Bag
+/// define
+
+- [See Java Implementation](bag.md)
+
+///
 
 ### API
 ``` mermaid
@@ -47,15 +54,13 @@ class Bag~Item~{
 ```
 
 ## Queue
-Process by least recently added.
+/// define
 
-FIFO: First In First Out
+- **Process by least recently added.**
+- FIFO: First In First Out
+- [See Java Implementation](queue.md)
 
-### Operations
-- Queue (Insert)
-- Enqueue (Remove)
-- Iterate
-- isEmpty
+///
 
 ### API
 ``` mermaid
@@ -69,11 +74,14 @@ class Queue~Item~{
 ```
 
 ## Stack
-Process by most recently added.
+/// define
 
-LIFO: Last In First Out
+- **Process by most recently added.** 
+- LIFO: Last In First Out
+- Can be represented in various ways (`Array`/`Linked List`), with `Linked List` being the most common.
+- [See Java Implementation](stack.md)
 
-Can be represented in various ways (`Array`/`Linked List`), with `Linked List` being the most common.
+///
 
 ### API
 
@@ -88,8 +96,13 @@ class Stack~Item~{
 ```
 
 ## Node
-Data structure used to create a `linked list`.
+/// define
 
+- **Data structure used to create a `Linked List`.**
+
+///
+
+### API
 ``` mermaid
 classDiagram
 class Node{
@@ -99,7 +112,11 @@ class Node{
 ```
 
 ## Linked List
-A recursive data structure that is either empty (null) or a "node" containing a value and a reference to a linked list.
+/// define
+
+- **A recursive data structure that is either empty (null) or a `node` containing a value and a reference to a linked list.**
+
+///
 
 ### Building A Linked List
 

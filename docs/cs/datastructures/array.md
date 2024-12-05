@@ -1,41 +1,32 @@
-# Array
+``` java
+public class Stack<Item>
+{
+    private Node first;  // top of the stack
+    private int n;      // number of items in stack
+    
+    private class Node
+    {
+        Item item;
+        Node next;
+    }
+    public boolean isEmpty()    { return first == null; }
+    public int size()           { return n; }
 
-A collection of elements stored at a contiguous memory location.
+    public void push(Item item)
+    {   // Add item to top of stack
+        Node oldFirst = first;
+        first = new Node();
+        first.item = item;
+        first.next = oldFirst;
+        n++;
+    }
 
-- Fixed size
-
-## Operations
-
-Create
-```java
-    int[] arr = new int[5];
+    public Item pop()
+    {   // Remove item from top of stack
+        Item item = first.item;
+        first = first.next;
+        n--;
+        return item;
+    }
+}
 ```
-
-```java
-    int[] arr = {1,2,3,4,5};
-```
-
-```java
-    int[] arr = new int[1];
-```
-
-Assign
-```java
-    arr[0] = 99;
-```
-
-Access
-```java
-    arr[0];
-```
-
-Modify Element
-```java
-    arr[0] = 2;
-```
-
-Multi-Dimensional Array
-```java
-    int[][] arr = new int[5][5];
-```
-

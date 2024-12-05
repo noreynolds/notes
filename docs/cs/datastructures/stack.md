@@ -1,20 +1,34 @@
-# Stack
-Process by most recently added.
+# Implementation
 
-LIFO: Last In First Out
+``` java
+public class Stack<Item>
+{
+    private Node first;  // top of the stack
+    private int n;      // number of items in stack
+    
+    private class Node
+    {
+        Item item;
+        Node next;
+    }
+    public boolean isEmpty()    { return first == null; }
+    public int size()           { return n; }
 
-Can be represented in various ways (`Array`/`Linked List`), with `Linked List` being the most common.
+    public void push(Item item)
+    {   // Add item to top of stack
+        Node oldFirst = first;
+        first = new Node();
+        first.item = item;
+        first.next = oldFirst;
+        n++;
+    }
 
-## Operations
-- Push (Insert)
-- Pop (Remove)
-- Iterate
-- isEmpty
-
-## API
-| Method Name       | Return Type   | Description                    |
-|-------------------|---------------|--------------------------------|
-| `Stack()`         | `Stack<Item>` | init stack                     |
-| `push(Item item)` | `void`        | Add item to stack              |
-| `pop()`           | `Item`        | Remove item from stack         |
-| `isEmpty()`       | `boolean`     | Check if stack has no elements |
+    public Item pop()
+    {   // Remove item from top of stack
+        Item item = first.item;
+        first = first.next;
+        n--;
+        return item;
+    }
+}
+```
