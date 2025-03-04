@@ -8,7 +8,8 @@ nav:
     - cs/index.md
     - Data Structures: cs/datastructures/index.md
     - Algorithms: cs/algorithms/index.md
-
+  - AWS:
+    - Cloud Practitioner: aws/ccp/index.md
 theme: 
   name: material
   font:
