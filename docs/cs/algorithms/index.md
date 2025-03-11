@@ -40,6 +40,50 @@ By implementing the `Comparable` interface, you can implement `compareTo()`. It 
 
 ## Elementary Sorts
 
+### Templates
+The following code blocks are used in the sorting algorithm examples below.
+
+#### Less
+```java
+private static boolean less(Comparable v, Comparable w)
+{ return v.compareTo(w) < 0; }
+```
+
+#### Exchange
+```java
+private static boolean exchange(Comparable[] a, int i, int j)
+{ Comparable t = a[i]; a[i] = a[j]; a[j] = t; }
+```
+
+
+### Insertion Sort
+/// define
+
+- [Java Implementation](insertion.md)
+
+///
+
+#### Strategy
+1. Start a loop from `1` to `n`;
+2. Compare the current item (`j`) with the previous item (`j-1`). 
+    2. If `j` is smaller, exchange items and repeat the process. 
+
+Items to the left of the current index are sorted, but not in their final position. Items may shift if a smaller item is found later. Sorting is finished when the final item is reached. 
+
+!!! note "Good To Know"
+    
+    Very efficient for partially sorted arrays.
+
+    For an array of length `n`:
+    
+    | Algorithm Analysis | Comparisons      | Exchanges        |
+    |--------------------|:----------------:|:----------------:|
+    | Average Case       | ~$\frac{n^2}{4}$ | ~$\frac{n^2}{4}$ |
+    | Best Case          |        n-1       |         0        |
+    | Worst Case         | ~$\frac{n^2}{2}$ | ~$\frac{n^2}{2}$ |
+
+    Insertion sort can be improved by shortening the inner loop to move the larger entries to the right one position instead of doing exchanges. This would cut array accesses in half.
+
 ### Selection Sort
 /// define
 
@@ -64,26 +108,54 @@ By implementing the `Comparable` interface, you can implement `compareTo()`. It 
     
     Data movement is minimal. Entries are only moved once (if needed). Worst case `n` exchanges.
 
-### Insertion Sort
+### Shellsort
 /// define
 
-- [Java Implementation](insertion.md)
+- [Java Implementation](shell.md)
 
 ///
 
 #### Strategy
 
-Items to the left of the current index are sorted, but not in their final position. Items may shift if a smaller item is found later. Sorting is finished when the final item is reached. 
+An extension of insertion sort. 
 
-!!! note "Good To Know"
-    
-    For an array of length `n`:
-    
-    | Algorithm Analysis | Comparisons      | Exchanges        |
-    |--------------------|:----------------:|:----------------:|
-    | Average Case       | ~$\frac{n^2}{4}$ | ~$\frac{n^2}{4}$ |
-    | Best Case          |        n-1       |         0        |
-    | Worst Case         | ~$\frac{n^2}{2}$ | ~$\frac{n^2}{2}$ |
+Create an _h_-sorted array. An _h_-sorted array is _h_ independent sorted subsequences. If _h_ is 5, this means there are 5 subsequences within the array that are each sorted. When _h_ equals 1, the sorting operation is complete. 
 
-### Shellsort
+The implementation uses the sequence of decreasing values $\frac{1}{2}(3^k-1)$, starting at the smallest increment greater than or equal to $\lfloor$_n_/3$\rfloor$ and decreasing to 1.
+
+## Mergesort
+
+> The algorithms discussed in this section are based on _merging_. the combination of 2 ordered arrays into one larger ordered array. 
+
+An array is sorted by:
+
+1. Dividing into two halves
+1. Sorting the two halves (recursively)
+1. Merging results
+
+### Abstract In-Place Merge
+/// define
+
+- [Java Implementation](mergesort_in_place.md)
+
+///
+
+#### Strategy
+The straightforward approach. Merge two disjoint ordered orders into a third array.
+
+1. Create an output array
+1. Choose the smallest remaining item form the two input arrays
+1. Add the chosen item to the output array.
+
+#### Faults
+When size increases, creating an ouput array for every merge becomes expensive.
+
+
+### Top-Down Mergesort
+/// define
+
+- [Java Implementation](top_down_mergesort.md)
+
+////
+
 

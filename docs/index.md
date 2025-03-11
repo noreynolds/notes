@@ -9,3 +9,4 @@ A site for notes on various topics. See more below.
 
 ## AWS
 - [Cloud Practitioner](aws/ccp/index.md)
+
