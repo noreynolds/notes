@@ -28,7 +28,7 @@ In simplest terms, Cloudwatch provides logs and Cloudtrail allows tracking of ac
 
 ### Cloudwatch with EC2
 
-Application and instance metrics cannot be collection without a cloudwatch agent installed on the instance.
+Application and instance metrics cannot be collected without a cloudwatch agent installed on the instance.
 
 * Metrics with agent provides the following measures:
     * Free memory
