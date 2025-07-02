@@ -6,10 +6,39 @@ nav:
   - Home: index.md
   - Computer Science:
     - cs/index.md
-    - Data Structures: cs/datastructures/index.md
-    - Algorithms: cs/algorithms/index.md
+    - Data Structures: 
+      - cs/datastructures/index.md
+      - Array: cs/datastructures/array.md
+      - Bag: cs/datastructures/bag.md
+      - Linked List: cs/datastructures/linkedlist.md
+      - Queue: cs/datastructures/queue.md
+      - Stack: cs/datastructures/stack.md
+    - Algorithms: 
+      - cs/algorithms/index.md
+      - Insertion: cs/algorithms/insertion.md
+      - Merge Sort In Place: cs/algorithms/mergesort_in_place.md
+      - Selection: cs/algorithms/selection.md
+      - Shell: cs/algorithms/shell.md
+      - Top Down Merge Sort: cs/algorithms/top_down_mergesort.md
   - AWS:
-    - Cloud Practitioner: aws/ccp/index.md
+    - aws/ccp/aws.md
+    - Cloud Practitioner:
+      - aws/ccp/index.md
+      - Cloud Adoption Framework: aws/ccp/caf.md
+      - Well-Architected Framework: aws/ccp/waf.md
+      - Services:
+        - aws/ccp/services/index.md
+        - Analytics: aws/ccp/services/analytics.md 
+        - Application Integration: aws/ccp/services/application_integration.md
+        - Compute: aws/ccp/services/compute.md
+        - Databases: aws/ccp/services/databases.md
+        - Dev Tools: aws/ccp/services/dev_tools.md
+        - Networking: aws/ccp/services/networking.md
+        - Storage: aws/ccp/services/storage.md
+      - Exams:
+        - aws/ccp/exams/index.md
+        - 01/10/2025: aws/ccp/exams/exam_01_10_2025.md
+        - 03/19/2025: aws/ccp/exams/exam_03_19_2025.md
 theme: 
   name: material
   font:

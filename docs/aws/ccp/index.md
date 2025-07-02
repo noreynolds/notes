@@ -1,5 +1,7 @@
 # AWS Cloud Practitioner
 
+[Exam Tips](exams/index.md)
+
 ## Checklist
 - [ ] EC2 instances and plans
 - [ ] Cloud Adoption Framework
@@ -11,15 +13,14 @@
 
 ## Quick Notes
 
-* [1/10/25 | Practice Exam](exam_01_10_2025.md)
-* [3/19/25 | Practice Exam](exam_03_19_2025.md)
+* [1/10/25 | Practice Exam](exams/exam_01_10_2025.md)
+* [3/19/25 | Practice Exam](exams/exam_03_19_2025.md)
 
 ## Topics
 
 * [Cloud Adoption Framework](caf.md)
 * [Well-Architected Framwork](waf.md)
-* [Services](services.md)
-* [Databases](databases.md)
+* [Services](services/index.md)
 
 ## Definitions
 

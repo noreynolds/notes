@@ -9,7 +9,7 @@
 * Apply reviews early in the design phase
 
 ## Operational Excellence
-The ability to support development and run workloads effectively, gain insight into their operations and to continuously improve supported orocesses and procedures.
+The ability to support development and run workloads effectively, gain insight into their operations and to continuously improve supported processes and procedures.
 
 ### Design Principles
 * Organize -> Prepare -> Operate -> Resolve
