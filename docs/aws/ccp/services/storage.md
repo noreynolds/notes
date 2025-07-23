@@ -22,6 +22,8 @@ Can be used to create data lakes
 
 Strong read-after-write consistency. 
 
+S3 Transfer Acceleration for higher performance (uses CloudFront/edge locations). Enabled per bucket 
+
 ### Storage Classes
 
 #### Standard
@@ -30,13 +32,18 @@ High throughput, low latency
 #### Intelligent
 Automatically moves data to the most cost-effective storage tier
 
-#### Standard Infrequent
+#### Standard Infrequent (S3-IA)
 Accessed monthly, millisecond retrieval
+
+#### One Zone Infrequent Access
+Infrequently accessed data, only stored in one AZ
 
 #### Glacier
 Archive for long-lived data
 
-#### Tiers
+##### Tiers 
+Ordered by fastest to slowest retrieval time and highest to lowest cost:
+
 * Instant Retrieval
 * Flexible: Can take minutes to hours
 * Deep: Can take up to 12 hours. Long archive

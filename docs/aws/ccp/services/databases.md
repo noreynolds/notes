@@ -10,6 +10,34 @@ Up to 5x throughput of MySQL and 3x throughput of PostgreSQL.
 ### RDS
 Easy-to-manage service for total cost of ownership. Automates provisioning, configuring, backing up and patching. Eight engines, two deployment options and numerous features to optimize performance.
 
+#### Backup and Restoration
+
+* Automated Backups
+    * Enabled by default, can be customized through `CreateDBInstance` API.*
+    * Performs a full daily backup, and applies changes from the transaction log to restore to the specific time requested.
+    * Retains backups for 7 days by default, but can be set to 35 days.
+    * Stored in S3
+* Database Snapshots
+    * User initiated
+    * Can be created within AWS management console, CreateDBSnapshot API, create-db-snapshot commands.
+
+Automated backups can be copied with `copy-db-snapshot` command.
+
+If an instance is deleted, a final DB snapshot is made if the user decides to restore the instance later.
+
+#### Security
+
+All logs, backups and snapshots are encrypted in an encrypted DB instance.
+
+Supports encryption at rest for all DB engines. Uses keys from KMS (Key Management Service). 
+
+Encryption can be added to an unencrypted DB instance:
+
+1. Create a DB snapshot
+2. Create a copy of the snapshot and specify a KMS encryption key.
+3. Restore an encrypted DB instance from the encrypted snapshot.
+
+
 ### Redshift
 SQL data warehousing service. 3x better price-performance and 7x better throughput than other cloud warehousing offerings. Seamless integration with SageMaker Lakehouse to perform analysis across Redshift, S3 data lakes, databases and federated data sources.
 
@@ -17,6 +45,10 @@ SQL data warehousing service. 3x better price-performance and 7x better throughp
 
 ### DynamoDB
 Serverless NoSQL database service that has no cold starts, version upgrades, maintenance windows, patching or downtime maintenance. Offers DynamoDB streams for event-driven applications.
+
+Maximum allowed item size: 400 KB.
+
+Full encryption of user data in transit (SSL) and at rest (AES-256, KMS key).
 
 ## In-memory
 

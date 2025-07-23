@@ -1,11 +1,27 @@
-# Exam Tips
+# Compute
+## Exam Tips
 
 * Pricing
 * Scaling options
 * ECS vs EKS
 * Lambda default timeout 15s
+* Lambda pricing
 
-# Elastic Cloud Compute (EC2)
+## Elastic Cloud Compute (EC2)
+
+??? info "Things to Know"
+    - [ ] Define EC2 & what it does
+    - [ ] Know what instance types are for EC2/capabilities covered
+        - Instance store: Ephemeral storage attached to the host. 
+        - Elastic Block Storage: Persistent storage separate from host instance
+    - [ ] Different EC2 purchase types
+        - On-demand: pay by the second
+        - Reserved: 1/3 year plans (All upfront/Partial upfront/None upfront)
+        - Savings: commit to a level of usage of EC2/Fargate/Lambda for 1/3 years
+        - Spot: Leverage unused EC2 capacity in a region for large discounts
+        - Dedicated: Dedicated physical server
+    - [ ] What an AMI is & does for EC2
+
 
 * Scalable
 * Can host applications or databases
@@ -18,7 +34,7 @@
     * Save licensing costs
     * For workloads that need dedicated physical servers
 
-## Billing
+### Billing*
 
 * On-Demand:
     * Pay by the hour or second
@@ -35,7 +51,7 @@
         * Amazon SageMaker Savings
     * Uses:
         * Committed and steady-state usage`
-* Reversed Instances:
+* Reserved Instances:
     * Similar savings to the Savings Plan
 * Spot Instances:
     * Up to 90% reduction form On-Demand pricing
@@ -43,7 +59,7 @@
         * Fault tolerant or stateless workloads
         * Apps with flexible start and end times
 
-## Instance Types
+### Instance Types*
 
 * General Purpose
 * Compute Optimized
@@ -65,7 +81,7 @@
 * HPC Optimized
     * High performance computing for large, complex simulations and deep learning workloads.
 
-## Features
+### Features
 * Load Balancer
     * Classic
     * Gateway
@@ -78,18 +94,27 @@
     * Rightsizing
     * Recommendations for optimization
 
-# AWS Lambda
+## AWS Lambda
+
+??? info "Things To Know"
+    - [ ] Define Lambda, difference from EC2/Beanstalk
+        - Serverless compute.
+    - [ ] Lambda usage pricing
+        - Only pay for compute time used
+    - [ ] Lambdas are essential for serverless approach
+
 * Serverless
 * Optimal for operations under 15 minutes
 
-# Fargate
+## Fargate
+* Serverless compute engine. Works w/ EKS/ECS
 * Optimal for operations over 15 minutes
 * Event driven
 
-# Outposts
+## Outposts
 * Fully managed on-premise solution
 
-# Lightsail
+## Lightsail
 * Easy to use virtual private server instances, containers, storage, databases, etc.
 * Optimal for small projects
 * Uses:
@@ -98,13 +123,20 @@
     * Personal websites
     * Small business applications
 
-# Batch
+## Batch
 
 Batch computing service that plans, schedules and runs containerized batch ML, simulation and analytics workloads.
 
-# Wavelength
+## Wavelength
 
 Run applications in AWS telco partners' data centers for low latency, data residency and resiliency.
+
+## AWS Elastic Beanstalk
+
+??? info "Things to Know"
+    - [ ] What Elastic Beanstalk is & difference from EC2
+        - PaaS offering. Upload code (zip) and deploy
+    - [ ] Different capabilities it provides
 
 ## Products
 | Service Name                                                                                                                                                                                                          	| Category                     	| Service description                                                                                 	|

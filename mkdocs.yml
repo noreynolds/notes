@@ -35,6 +35,7 @@ nav:
         - Dev Tools: aws/ccp/services/dev_tools.md
         - Networking: aws/ccp/services/networking.md
         - Storage: aws/ccp/services/storage.md
+        - Security: aws/ccp/services/security.md
       - Exams:
         - aws/ccp/exams/index.md
         - 01/10/2025: aws/ccp/exams/exam_01_10_2025.md

@@ -1,6 +1,6 @@
 # AWS Cloud Practitioner
 
-[Exam Tips](exams/index.md)
+[Exams](exams/index.md)
 
 ## Checklist
 - [ ] EC2 instances and plans
@@ -64,6 +64,7 @@ Use AWS Health Dashboard to monitor the status of AWS services. Can also be acce
 A support tool that inspects your AWS environment to offer recommendations to save money, improve system availability, improve performance or close security gaps. On the Basic/Developer support plan, it checks for service limits and some security measures.
 
 Basic/Developer checks:
+
 * Any open security groups?
 * Are you using IAM users?
 * Is MFA enabled on the root account?
@@ -76,6 +77,7 @@ Basic/Developer checks:
 Continuous checks to guarantee compliance.
 
 Monitors: 
+
 * Data encryption in transit and at rest
 * Secure cloudtrail
 * Resources with public access

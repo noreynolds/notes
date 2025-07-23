@@ -7,6 +7,7 @@
 * [Storage](storage.md)
 * [Networking](networking.md)
 * [Developer Tools](dev_tools.md)
+* [Security](security.md)
 
 ## Advantages:
 
@@ -40,6 +41,8 @@ Application and instance metrics cannot be collected without a cloudwatch agent 
 * Cloudwatch log groups have indefinite retainment by default
     * Take note, may cause potential unexpected costs
 * Cloudwatch dashboards
+
+#### Pricing
 
 # Regions
 

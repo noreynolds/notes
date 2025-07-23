@@ -26,7 +26,7 @@ Ensure our cloud investments accelerate your digital transformation and business
     * Consider short-term and long-term outcomes.
 
     #### Innovation Management 
-    * Focus on optimzation of existing products, processes, experiences.
+    * Focus on optimization of existing products, processes, experiences.
     * Develop an end-to-end process for scaling successful pilots.
 
     #### Product Management
