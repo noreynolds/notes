@@ -1,5 +1,5 @@
 # Compute
-## Exam Tips
+## CCP Exam Tips
 
 * Pricing
 * Scaling options

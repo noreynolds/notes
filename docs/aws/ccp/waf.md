@@ -23,7 +23,7 @@ The ability to support development and run workloads effectively, gain insight i
 Take advantage of cloud technologies to protect data, systems and assets to improve security.
 
 ### Design Principles
-* Maintain traceacility
+* Maintain traceability
 * Automate security best practices
 * Protect data in transit and at rest
 * Prepare for security events

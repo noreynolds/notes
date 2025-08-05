@@ -27,6 +27,11 @@ In simplest terms, Cloudwatch provides logs and Cloudtrail allows tracking of ac
 | Stores logs                           	| Track API activity in AWS                      	|
 | Trigger events with Cloudwatch Alarms 	| Creates breadcrumbs for account activity       	|
 
+
+* Cloudwatch log groups have indefinite retainment by default
+    * Take note, may cause potential unexpected costs
+* Cloudwatch dashboards
+
 ### Cloudwatch with EC2
 
 Application and instance metrics cannot be collected without a cloudwatch agent installed on the instance.
@@ -35,12 +40,6 @@ Application and instance metrics cannot be collected without a cloudwatch agent 
     * Free memory
     * Percentage of disc space used
     * Custom application metrics
-
-### Exam
-
-* Cloudwatch log groups have indefinite retainment by default
-    * Take note, may cause potential unexpected costs
-* Cloudwatch dashboards
 
 #### Pricing
 

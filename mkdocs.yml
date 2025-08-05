@@ -77,6 +77,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
+    - content.tooltips
 
 markdown_extensions:
   - tables
@@ -87,6 +88,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+        # format: !!python/name:mermaid2.fence_mermaid_custom
+
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight:
@@ -95,7 +98,11 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/glossary.md
+  - abbr
+  - attr_list
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys

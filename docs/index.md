@@ -1,4 +1,4 @@
-# Notes
+---# Notes
 
 A site for notes on various topics. See more below.
 
