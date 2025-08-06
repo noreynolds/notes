@@ -1,0 +1,3154 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://noreynolds.github.io/notes/aws/ccp/caf/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../waf/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Cloud Adoption Framework - Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aws-cloud-adoption-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Notes" class="md-header__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud Adoption Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/noreynolds/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../aws/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AWS
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Notes" class="md-nav__button md-logo" aria-label="Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/noreynolds/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cs/datastructures/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Data Structures
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Structures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/datastructures/array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/datastructures/bag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/datastructures/linkedlist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/datastructures/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/datastructures/stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cs/algorithms/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/algorithms/insertion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insertion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/algorithms/mergesort_in_place/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Merge Sort In Place
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/algorithms/selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/algorithms/shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/algorithms/top_down_mergesort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Top Down Merge Sort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Amazon Web Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Cloud Practitioner
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Practitioner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cloud Adoption Framework
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Adoption Framework
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspectives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perspectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portfolio Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#innovation-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Innovation Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Product Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-partnership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategic Partnership
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-monetization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Monetization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Insights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#people" class="md-nav__link">
+    <span class="md-ellipsis">
+      People
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="People">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#culture-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Culture Evolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformational-leadership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformational Leadership
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-fluency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud Fluency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workforce-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workforce Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Acceleration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization Alignment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Governance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-and-project-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program and Project Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-financial-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud Financial Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Portfolio Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Governance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-curation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Curation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provisioning-and-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisioning and Orchestration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-app-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern App Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Governance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Assurance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-and-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity And Access Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threat-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threat Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vulnerability-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incident Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-and-problem-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incident and Problem Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-and-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change and Release Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-capacity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Capacity Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-and-continuity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability and Continuity Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#envision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Envision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align" class="md-nav__link">
+    <span class="md-ellipsis">
+      Align
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Well-Architected Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../services/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Analytics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/application_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Databases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/dev_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dev Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Storage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../exams/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Exams
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Exams
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exams/exam_01_10_2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01/10/2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exams/exam_03_19_2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    03/19/2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspectives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perspectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portfolio Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#innovation-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Innovation Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Product Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-partnership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategic Partnership
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-monetization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Monetization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Insights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Science
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#people" class="md-nav__link">
+    <span class="md-ellipsis">
+      People
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="People">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#culture-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Culture Evolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformational-leadership" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformational Leadership
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-fluency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud Fluency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workforce-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workforce Transformation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change Acceleration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization Alignment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Governance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-and-project-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program and Project Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-financial-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud Financial Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-portfolio-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Portfolio Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Governance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-curation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Curation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provisioning-and-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisioning and Orchestration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modern-app-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modern App Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI/CD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Governance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Assurance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-and-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity And Access Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threat-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threat Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vulnerability-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incident Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-and-problem-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incident and Problem Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-and-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change and Release Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-capacity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Capacity Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patch-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Patch Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-and-continuity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability and Continuity Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#envision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Envision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align" class="md-nav__link">
+    <span class="md-ellipsis">
+      Align
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aws-cloud-adoption-framework">AWS Cloud Adoption Framework<a class="headerlink" href="#aws-cloud-adoption-framework" title="Permanent link">&para;</a></h1>
+<h2 id="perspectives">Perspectives<a class="headerlink" href="#perspectives" title="Permanent link">&para;</a></h2>
+<h3 id="business">Business<a class="headerlink" href="#business" title="Permanent link">&para;</a></h3>
+<p>Ensure our cloud investments accelerate your digital transformation and business outcomes.</p>
+<h4 id="stakeholders">Stakeholders<a class="headerlink" href="#stakeholders" title="Permanent link">&para;</a></h4>
+<ul>
+<li>CEO</li>
+<li>CFO</li>
+<li>COO</li>
+<li>CIO</li>
+<li>CTO</li>
+</ul>
+<details class="info">
+<summary>Business Perspectives</summary>
+<h4 id="strategy-management">Strategy Management<a class="headerlink" href="#strategy-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Consider how the cloud can support your long-term goals.</li>
+<li>Identify opportunities to retire tech debt.</li>
+<li>Consider reach to new customers, new market segments.</li>
+<li>Prioritize strategic objectives and evolve strategy over time.</li>
+</ul>
+<h4 id="portfolio-management">Portfolio Management<a class="headerlink" href="#portfolio-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Deliver the right cloud products at the right time.</li>
+<li><em>Leverage automated discovery tools and 7 migration strategies.</em></li>
+<li>Consider short-term and long-term outcomes.</li>
+</ul>
+<h4 id="innovation-management">Innovation Management<a class="headerlink" href="#innovation-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Focus on optimization of existing products, processes, experiences.</li>
+<li>Develop an end-to-end process for scaling successful pilots.</li>
+</ul>
+<h4 id="product-management">Product Management<a class="headerlink" href="#product-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Organize teams around products for agility.</li>
+<li>Product roadmaps, end-to-end lifecycles, associated value streams.</li>
+</ul>
+<h4 id="strategic-partnership">Strategic Partnership<a class="headerlink" href="#strategic-partnership" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Partner with your cloud provider (consulting, managed services).</li>
+<li>Leverage promotional credits, funding benefits, marketplace.</li>
+</ul>
+<h4 id="data-monetization">Data Monetization<a class="headerlink" href="#data-monetization" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Develop a long-term data monetization strategy.</li>
+<li>Leverage data and analytics to improve operations, customer and employee experience.</li>
+</ul>
+<h4 id="business-insights">Business Insights<a class="headerlink" href="#business-insights" title="Permanent link">&para;</a></h4>
+<ul>
+<li>"Big picture" first, then drill down into details</li>
+<li>Statistics, visualization, communication</li>
+</ul>
+<h4 id="data-science">Data Science<a class="headerlink" href="#data-science" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leverage experimentation, advanced analytics and machine learning to solve complex business problems.</li>
+<li>Mitigate risk by delegating low-confidence predictions to humans.</li>
+</ul>
+</details>
+<h3 id="people">People<a class="headerlink" href="#people" title="Permanent link">&para;</a></h3>
+<p>Focus on culture, organizational structure, leadership, workforce.</p>
+<h4 id="stakeholders_1">Stakeholders<a class="headerlink" href="#stakeholders_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>CIO</li>
+<li>COO</li>
+<li>CTO</li>
+<li>Cloud Director</li>
+<li>Enterprise Leaders</li>
+</ul>
+<details class="info">
+<summary>People Perspectives</summary>
+<h4 id="culture-evolution">Culture Evolution<a class="headerlink" href="#culture-evolution" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Evaluation, evolve, codify organizational culture with digital transformation aspirations</li>
+<li>Consider rapid transformation, agile, cross-functional teams.</li>
+</ul>
+<h4 id="transformational-leadership">Transformational Leadership<a class="headerlink" href="#transformational-leadership" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Leaders must put on equal focus on people and tech</li>
+<li>Clear + consisten communication to align organization</li>
+<li>Consider a transofmration office (Cloud Center of Excellence)</li>
+</ul>
+<h4 id="cloud-fluency">Cloud Fluency<a class="headerlink" href="#cloud-fluency" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Hire, develop, train, motivate a high-performing workforce.</li>
+<li>Have a well-constructed strategy for cloud skills</li>
+</ul>
+<h4 id="workforce-transformation">Workforce Transformation<a class="headerlink" href="#workforce-transformation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Modernize roles to attract talent</li>
+<li>Aim for diverse and inclusive workforce with a mix of technical and non0technical skills</li>
+</ul>
+<h4 id="change-acceleration">Change Acceleration<a class="headerlink" href="#change-acceleration" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Define what success looks like early on in the journey</li>
+<li>Identify stakeholders, risks, dependencies and barriers</li>
+<li>Make changes stick with feedback (rewards, recognition)</li>
+</ul>
+<h4 id="organization-design">Organization Design<a class="headerlink" href="#organization-design" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Reflect if the organization design fits your goals</li>
+<li>Consider a centralized team to facilitate your cloud initiative</li>
+</ul>
+<h4 id="organization-alignment">Organization Alignment<a class="headerlink" href="#organization-alignment" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Prioritize business outcomes, agility, rpoduct/service innovation</li>
+<li>Set measurable goals, mechanisms for cloud adoption</li>
+</ul>
+</details>
+<h3 id="governance">Governance<a class="headerlink" href="#governance" title="Permanent link">&para;</a></h3>
+<p>Orchestrate cloud initiatives, maximize organization benefit, minimize transformation risks.</p>
+<h4 id="stakeholders_2">Stakeholders<a class="headerlink" href="#stakeholders_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Chief Transformation Officer</li>
+<li>CIO</li>
+<li>CTO</li>
+<li>CFO</li>
+<li>Chief Data Officer</li>
+<li>Chief Risk Officer</li>
+</ul>
+<details class="info">
+<summary>Governance Perspectives</summary>
+<h4 id="program-and-project-management">Program and Project Management<a class="headerlink" href="#program-and-project-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Align initiatives for optimized/integrated costs, effort, benefits</li>
+<li>Validation your roadmap with business sponsors</li>
+<li>Agile apporach to minimize far reaching predictions</li>
+</ul>
+<h4 id="benefits-management">Benefits Management<a class="headerlink" href="#benefits-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Clearly identify benefits of cloud</li>
+<li>Prioritize cloud benefits and track progress</li>
+</ul>
+<h4 id="risk-management">Risk Management<a class="headerlink" href="#risk-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Identify operational risks (infrastructure availability, security)</li>
+<li>Reduce need for large upfront infra costs</li>
+</ul>
+<h4 id="cloud-financial-management">Cloud Financial Management<a class="headerlink" href="#cloud-financial-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Use best pricing models</li>
+<li>Clarify financial roles + responsibilities, shared understanding</li>
+<li>Align account structure &amp; tagging strategy with organization</li>
+<li>Ensure worklaods are well-architected, cost effective</li>
+<li>Centralize management of on-premise and cloud software licenses</li>
+</ul>
+<h4 id="application-portfolio-management">Application Portfolio Management<a class="headerlink" href="#application-portfolio-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Link applications to their associated resources</li>
+<li>Start with crtitical apps, define business capabilities, map them to their resources</li>
+<li>Build a complete picture of each app</li>
+</ul>
+<h4 id="data-governance">Data Governance<a class="headerlink" href="#data-governance" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Data owners</li>
+<li>Data lifecycle policies</li>
+<li>Prioritize data quality</li>
+</ul>
+<h4 id="data-curation">Data Curation<a class="headerlink" href="#data-curation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Collection, organize, enrich metadata to create a data catalog</li>
+</ul>
+</details>
+<h3 id="platform">Platform<a class="headerlink" href="#platform" title="Permanent link">&para;</a></h3>
+<p>Build enterprise-grade, scalable, hybrid cloud platform. Modernize existing workloads, implement new cloud native solutions.</p>
+<h4 id="stakeholders_3">Stakeholders<a class="headerlink" href="#stakeholders_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>CTO</li>
+<li>Tech leaders</li>
+<li>Architects</li>
+<li>Engineers</li>
+</ul>
+<details class="info">
+<summary>Platform Perspectives</summary>
+<h4 id="platform-architecture">Platform Architecture<a class="headerlink" href="#platform-architecture" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Define best practice blueprints &amp; guardrails</li>
+<li>Authentication, security, netowrking, logging &amp; monitoring</li>
+<li>Evaluate hybrid cloud when on-premise still has a need</li>
+</ul>
+<h4 id="data-architecture">Data Architecture<a class="headerlink" href="#data-architecture" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Reduce complexity, cost, technical debt</li>
+<li>Select key tech for architectural layers, ingestion, storing</li>
+<li>Simplify with serverless</li>
+<li>Adopt a Lake House when necessary</li>
+</ul>
+<h4 id="platform-engineering">Platform Engineering<a class="headerlink" href="#platform-engineering" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Deploy best practice blueprints, detective and preventive guardrails</li>
+<li>Automate account provisioning workflow</li>
+<li>Set up connection between on-premise and cloud</li>
+</ul>
+<h4 id="data-engineering">Data Engineering<a class="headerlink" href="#data-engineering" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automate data and analytic platforms</li>
+<li>Share blueprints with business analysts/data scientists (self-service)</li>
+</ul>
+<h4 id="provisioning-and-orchestration">Provisioning and Orchestration<a class="headerlink" href="#provisioning-and-orchestration" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Streamline this process</li>
+<li>Self-service for publishing, distributing, browsing, consuming</li>
+</ul>
+<h4 id="modern-app-development">Modern App Development<a class="headerlink" href="#modern-app-development" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Containers, serverless, microservices, event-driven architecture</li>
+<li>Modernize, replatform, refactoring</li>
+</ul>
+<h4 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automate CI/CD, manual to Production</li>
+<li>Deployment strategies; in-place, rolling, immutable, blue-green</li>
+</ul>
+</details>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>Achieve confidentiality, integrity, availability of data.</p>
+<h4 id="stakeholders_4">Stakeholders<a class="headerlink" href="#stakeholders_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Chief Information Security Officer</li>
+<li>Chief Compliance Officer</li>
+<li>Audit leaders</li>
+<li>Architects</li>
+<li>Engineers</li>
+</ul>
+<details class="info">
+<summary>Security Perspectives</summary>
+<h4 id="security-governance">Security Governance<a class="headerlink" href="#security-governance" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Develop, maintain and effectively communicate security roles.</li>
+<li>Laws, rules, regulations, standards/frameworks</li>
+</ul>
+<h4 id="security-assurance">Security Assurance<a class="headerlink" href="#security-assurance" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Continuously monitor &amp; evaluate environment</li>
+<li>Audit reports, compliance certs</li>
+</ul>
+<h4 id="identity-and-access-management">Identity And Access Management<a class="headerlink" href="#identity-and-access-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create and control identities</li>
+<li>Use <abbr title="Multifactor Authentication">MFA</abbr></li>
+<li>Use the principal of least privilege</li>
+</ul>
+<h4 id="threat-detection">Threat Detection<a class="headerlink" href="#threat-detection" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Monitor all environments</li>
+<li>Identify security misconfigurations</li>
+</ul>
+<h4 id="vulnerability-management">Vulnerability Management<a class="headerlink" href="#vulnerability-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Scan for vulnerabilities</li>
+<li>Red teaming, penetration testing</li>
+</ul>
+<h4 id="infrastructure-protection">Infrastructure Protection<a class="headerlink" href="#infrastructure-protection" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create network layers</li>
+<li>Security groups, network access control lists, firewalls</li>
+</ul>
+<h4 id="data-protection">Data Protection<a class="headerlink" href="#data-protection" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Classify your data based on criticality and sensitivity</li>
+<li>Data protection controls, lifecycle management</li>
+</ul>
+<h4 id="application-security">Application Security<a class="headerlink" href="#application-security" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automate security-related tasks</li>
+<li>Vulnerability scans</li>
+</ul>
+<h4 id="incident-response">Incident Response<a class="headerlink" href="#incident-response" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Educate security operations and incident response teams</li>
+<li>Develop runbooks, a library of incident response mechanisms</li>
+<li>Simulate security events</li>
+</ul>
+</details>
+<h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
+<p>Cloud services meet business needs</p>
+<h4 id="stakeholders_5">Stakeholders<a class="headerlink" href="#stakeholders_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Infra/Operations leads</li>
+<li>Site Reliability Engineers</li>
+</ul>
+<details class="info">
+<summary>Operations Perspectives</summary>
+<h4 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Telemetry (logs, metrics, traces)</li>
+<li>Synthetic monitoring tocreate canaries (scheduled scripts)</li>
+<li>Centralize data in a single dashboard</li>
+</ul>
+<h4 id="event-management">Event Management<a class="headerlink" href="#event-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Focus on priority events, filter noise</li>
+<li>Automate event correlation</li>
+<li>Automate responses to events</li>
+</ul>
+<h4 id="incident-and-problem-management">Incident and Problem Management<a class="headerlink" href="#incident-and-problem-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Define escalation paths </li>
+<li>Practice incident response game days</li>
+<li>Post-incident analyses</li>
+</ul>
+<h4 id="change-and-release-management">Change and Release Management<a class="headerlink" href="#change-and-release-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automate approval workflows</li>
+<li>Use deployment management systems</li>
+<li>Frequent small, reversible changes</li>
+</ul>
+<h4 id="performance-capacity-management">Performance Capacity Management<a class="headerlink" href="#performance-capacity-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Collect and review performance data</li>
+<li>Create baselines for future comparison</li>
+</ul>
+<h4 id="configuration-management">Configuration Management<a class="headerlink" href="#configuration-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Define/enforce a tagging schema</li>
+<li>IaC</li>
+<li>Set config baselines, track with version control</li>
+</ul>
+<h4 id="patch-management">Patch Management<a class="headerlink" href="#patch-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Apply important updates during your maintainance window</li>
+<li>Update machine images, perform critical fixes asap</li>
+</ul>
+<h4 id="availability-and-continuity-management">Availability and Continuity Management<a class="headerlink" href="#availability-and-continuity-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Cloud backup solutions</li>
+<li>Disaster recovery, multi-<abbr title="Availability Zone">AZ</abbr>, multi region</li>
+<li>Chaos engineering</li>
+</ul>
+<h4 id="application-management">Application Management<a class="headerlink" href="#application-management" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automate discovery of app components and resources</li>
+</ul>
+</details>
+<h2 id="phases">Phases<a class="headerlink" href="#phases" title="Permanent link">&para;</a></h2>
+<h3 id="envision">Envision<a class="headerlink" href="#envision" title="Permanent link">&para;</a></h3>
+<p>Identify and prioritize transformation opportunities across each transformation domain in line with your business objectives.</p>
+<p>Focus on demonstrating how the cloud will help accelerate business outcomes.</p>
+<h3 id="align">Align<a class="headerlink" href="#align" title="Permanent link">&para;</a></h3>
+<p>Focus on identifying capability gaps across the AWS CAF perspectives.</p>
+<p>Create strategies for identified gaps.</p>
+<h3 id="launch">Launch<a class="headerlink" href="#launch" title="Permanent link">&para;</a></h3>
+<p>Delivers pilot initiatives in production.</p>
+<p>Demonstrate incremental business value.</p>
+<p>Pilots should be highly impactful.</p>
+<h3 id="scale">Scale<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h3>
+<p>Expand production pilots and business value to desired scale</p>
+<!-- NETWORKING -->
+<!-- AWS -->
+<!-- Cloud Concepts -->
+<!-- SECURITY -->
+<!-- SECURITY -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.indexes", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
